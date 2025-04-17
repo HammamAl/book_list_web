@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Hammam Alfarisy" />
+    <meta name="description" content="Book List Web Application for managing books and categories" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2232/2232688.png" type="image/png" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <title>Book List App | Hammam Alfarisy</title>
+
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      #root {
+        flex: 1;
+        padding-bottom: 20px; /* Memberikan ruang antara konten dan footer */
+      }
+
+      .author-footer {
+        position: static; /* Mengubah dari fixed menjadi static */
+        width: 100%;
+        background-color: #f5f5f5;
+        padding: 10px 0;
+        text-align: center;
+        font-size: 0.9rem;
+        border-top: 1px solid #ddd;
+        color: #333;
+        margin-top: auto; /* Memastikan footer berada di bawah */
+      }
+
+      .author-footer a {
+        color: #3273dc;
+        text-decoration: none;
+        margin: 0 10px;
+        transition: color 0.3s;
+      }
+
+      .author-footer a:hover {
+        color: #363636;
+      }
+
+      .author-footer i {
+        margin-right: 5px;
+      }
+
+      .developer-name {
+        color: #000000; /* Mengubah warna teks menjadi hitam */
+        font-weight: bold;
+      }
+
+      @media screen and (max-width: 768px) {
+        .author-footer {
+          padding: 15px 0;
+        }
+
+        .author-footer .contact-links {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <footer class="author-footer">
+      <div><span class="developer-name">Developed by Hammam Alfarisy </span>&copy; 2023</div>
+      <div class="contact-links">
+        <a href="mailto:alfarisihammam@gmail.com"> <i class="fas fa-envelope"></i>alfarisihammam@gmail.com </a>
+        <a href="https://wa.me/6285729349482"> <i class="fab fa-whatsapp"></i>085729349482 </a>
+        <a href="https://github.com/HammamAl/book_list_web" target="_blank"> <i class="fab fa-github"></i>GitHub Repository </a>
+      </div>
+    </footer>
+  </body>
+</html>
