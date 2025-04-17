@@ -19,12 +19,12 @@ Sebuah aplikasi fullstack yang berfungsi untuk memanage dan mengkategorisasi buk
 1. Clone the repository
 2. Install dependencies:
 
-   ## Backend
+   ## backend :
 
    cd book_list_web
    npm install
 
-   ## Frontend
+   ## frontend :
 
    cd frontend
    npm install
@@ -32,11 +32,11 @@ Sebuah aplikasi fullstack yang berfungsi untuk memanage dan mengkategorisasi buk
 3. Set up environment variables
 4. Run the application:
 
-   ## Backend
+   ## backend :
 
    npm start
 
-   ## Frontend
+   ## frontend :
 
    cd frontend
    npm start
