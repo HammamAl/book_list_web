@@ -1,4 +1,4 @@
-#Tugas Take Home Test Internship Azuralabs Book List Web Application 2025
+# Tugas Take Home Test Internship Azuralabs Book List Web Application 2025
 
 Sebuah aplikasi fullstack yang berfungsi untuk memanage dan mengkategorisasi buku.
 
@@ -19,12 +19,12 @@ Sebuah aplikasi fullstack yang berfungsi untuk memanage dan mengkategorisasi buk
 1. Clone the repository
 2. Install dependencies:
 
-   # Backend
+   ## Backend
 
    cd book_list_web
    npm install
 
-   # Frontend
+   ## Frontend
 
    cd frontend
    npm install
@@ -32,11 +32,11 @@ Sebuah aplikasi fullstack yang berfungsi untuk memanage dan mengkategorisasi buk
 3. Set up environment variables
 4. Run the application:
 
-   # Backend
+   ## Backend
 
    npm start
 
-   # Frontend
+   ## Frontend
 
    cd frontend
    npm start
