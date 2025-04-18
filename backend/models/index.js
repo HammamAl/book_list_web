@@ -1,5 +1,5 @@
 import sequelize from "../config/database.js";
-import { Book } from "./book.js";
+import { Book } from "./Book.js";
 import { Category } from "./Category.js";
 
 Category.hasMany(Book, {
