@@ -1,0 +1,32 @@
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  min-height: calc(100vh - 52px - 84px); /* Viewport height minus navbar and footer */
+}
+
+.navbar {
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
+}
+
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-content {
+  flex-grow: 1;
+}
+
+.notification {
+  margin-bottom: 1.5rem;
+}

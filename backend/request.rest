@@ -1,104 +1,76 @@
 ###
-POST  http://localhost:3000/api/categories
+GET https://book-api-854460623550.asia-southeast2.run.app/api/categories
+ 
+###
+POST http://localhost:3000/api/categories
 Content-Type: application/json
 
 {
-    "name" : "Teknologi",
-    "description": "Buku - buku tentang teknologi dan komputer"
+    "name": "Fiksi",
+    "description": "Buku-buku fiksi populer"
+
 }
 
 ###
-POST  http://localhost:3000/api/categories
+PATCH http://localhost:3000/api/categories/NJxk92Fbp6fvNMAsYhrU
 Content-Type: application/json
 
 {
-    "name" : "Sejarah",
-    "description": "Sejarah Kebudayaan Indonesia"
+    "name": "Astronomi",
+    "description": "Buku-buku astronomi"
+
 }
 
 ###
-
-###
-GET http://localhost:3000/api/categories/2
-
-###
-PATCH   http://localhost:3000/api/categories/2
-Content-Type: application/json
-
-{
-    "name" : "Science",
-    "description": "Natural, applied, and fiction"
-}
-
-###
-DELETE http://localhost:3000/api/categories/2
-
-###
-GET http://localhost:3000/api/books
+DELETE http://localhost:3000/api/categories/q8FcuKlXndz9i24K82VD
 
 ###
 POST http://localhost:3000/api/books
 Content-Type: application/json
 
-
 {
-     "title": "Belajar Node.js",
-     "author": "Andi",
-     "publicationDate": "2024-04-18",
-     "publisher": "Penerbit Maju",
-     "pages": 200,
-     "isbn": "978-0-061-96436-7",
-     "coverImage": "https://example.com/cover.jpg",
-     "categoryId": 1
+     "title": "Harry Potter dan Batu Bertuah",
+     "author": "J.K. Rowling",
+     "publicationDate": "1997-06-26",
+     "publisher": "Gramedia",
+     "pages": 320,
+     "isbn": "9780747532743",
+     "categoryId": "NJxk92Fbp6fvNMAsYhrU"
+
 }
 
 ###
 POST http://localhost:3000/api/books
 Content-Type: application/json
 
-
 {
-     "title": "Belajar Python",
-     "author": "hammam",
-     "publicationDate": "2000-03-12",
-     "publisher": "Penerbit Andi",
-     "pages": 200,
-     "categoryId": 1
+     "title": "Tutorial Limit",
+     "author": "Mbak Hila",
+     "publicationDate": "2023-12-12",
+     "publisher": "Gramedia",
+     "pages": 440,
+     "categoryId": "NJxk92Fbp6fvNMAsYhrU"
+
 }
 
+
 ###
-POST http://localhost:3000/api/books
+GET https://book-api-854460623550.asia-southeast2.run.app/api/books
+
+###
+PATCH http://localhost:3000/api/books/sxDc1pmGWxCJtw25MPtd
 Content-Type: application/json
 
-
 {
-     "title": "Belajar Fisika",
-     "author": "fadhiel",
-     "publicationDate": "2023-09-23",
-     "publisher": "Penerbit Andi",
-     "pages": 400,
-     "categoryId": 3
+     "title": "Kalkulus",
+     "author": "Hammam",
+     "publicationDate": "2000-12-09",
+     "publisher": "Gramedia",
+     "pages": 320,
+     "isbn": "9780747532743",
+     "categoryId": "NJxk92Fbp6fvNMAsYhrU"
+
 }
 
 ###
-PATCH http://localhost:3000/api/books/4
-Content-Type: application/json
-
-
-{
-     "title": "Belajar Sejarah",
-     "author": "Nasywa",
-     "publicationDate": "2000-09-14",
-     "publisher": "Penerbit MBZ",
-     "pages": 900,
-     "categoryId": 3
-}
-
-###
-DELETE http://localhost:3000/api/books/2
-
-###
-GET http://localhost:3000/api/books
-
-###
-GET http://localhost:3000/api/books?publicationDate=2024-04-18
+DELETE http://localhost:3000/api/books/hlhvLsSOHfpyEbjySelE
