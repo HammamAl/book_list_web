@@ -80,7 +80,7 @@ const HomePage = () => {
             <div className="column is-4" key={book.id}>
               <div className="card">
                 <header className="card-header">
-                  <p className="card-header-title">{book.title}</p>
+                  <p className="card-header-title is-size-5">{book.title}</p>
                 </header>
                 <div className="card-content">
                   <div className="content">

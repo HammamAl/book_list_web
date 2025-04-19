@@ -19,7 +19,7 @@ const CategoryItem = ({ category, onDelete }) => {
   return (
     <div className="card">
       <header className="card-header">
-        <p className="card-header-title">{category.name}</p>
+        <p className="card-header-title is-size-5">{category.name}</p>
       </header>
       <div className="card-content">
         <div className="content">
