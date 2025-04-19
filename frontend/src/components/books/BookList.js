@@ -30,7 +30,13 @@ const BookList = () => {
       try {
         setLoading(true);
         const [booksData, categoriesData] = await Promise.all([getBooks(filters), getCategories()]);
-        setBooks(booksData);
+
+        const sortedBooks = booksData.sort((a, b) => {
+          return new Date(b.createdAt) - new Date(a.createdAt);
+        });
+
+        // Set the *sorted* books and categories to state
+        setBooks(sortedBooks);
         setCategories(categoriesData);
       } catch (error) {
         console.error("Error fetching data:", error);

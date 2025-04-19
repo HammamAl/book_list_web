@@ -4,7 +4,23 @@ import bookRoutes from "./routes/bookRoutes.js";
 import categoryRoutes from "./routes/categoryRoutes.js";
 
 const app = express();
-app.use(cors());
+
+// Daftar origin yang diizinkan
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://book-list-web-flame.vercel.app"
+];
+
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("CORS policy: Origin tidak diizinkan"));
+    }
+  }
+}));
+
 app.use(express.json());
 
 app.use("/api/books", bookRoutes);
