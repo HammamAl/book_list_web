@@ -13,5 +13,6 @@ Sebuah aplikasi fullstack yang berfungsi untuk memanage dan mengkategorisasi buk
 - Frontend: React
 - Backend: Node.js/Express
 - Database: Firestore
+- Hosting App: Cloud Run and Vercel
 
 Link Deploy : https://book-list-web-flame.vercel.app/books
