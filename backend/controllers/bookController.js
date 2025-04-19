@@ -93,6 +93,38 @@ export const getBooks = async (req, res) => {
   }
 };
 
+// GET BOOK BY ID
+export const getBookById = async (req, res) => {
+  console.log(`--- GET /api/books/:id CONTROLLER REACHED --- ID: ${req.params.id}`);
+  try {
+    const { id } = req.params;
+    console.log(`[Backend] Attempting to fetch book with ID: ${id}`);
+
+    // Ambil dokumen buku
+    const bookDoc = await booksCollection.doc(id).get();
+
+    if (!bookDoc.exists) {
+      console.log(`[Backend] Book with ID: ${id} not found in Firestore.`);
+      return res.status(404).json({ error: "Buku tidak ditemukan" });
+    }
+
+    const bookData = bookDoc.data();
+
+    // Ambil informasi kategori
+    const categoryDoc = await categoriesCollection.doc(bookData.categoryId).get();
+
+    // Kembalikan buku dengan info kategori
+    res.json({
+      id: bookDoc.id,
+      ...bookData,
+      category: categoryDoc.exists ? { id: categoryDoc.id, ...categoryDoc.data() } : null,
+    });
+  } catch (err) {
+    console.error(`[Backend] Error in getBookById for ID: ${id}:`, err);
+    res.status(500).json({ error: err.message });
+  }
+};
+
 // UPDATE BOOK
 export const updateBook = async (req, res) => {
   try {

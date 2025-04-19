@@ -42,7 +42,7 @@ const CategoryItem = ({ category, onDelete }) => {
           </span>
           <span>View Books</span>
         </Link>
-        <button className="card-footer-item button is-white has-text-danger" onClick={handleDelete}>
+        <button className="card-footer-item button has-text-danger" onClick={handleDelete}>
           <span className="icon">
             <i className="fas fa-trash"></i>
           </span>

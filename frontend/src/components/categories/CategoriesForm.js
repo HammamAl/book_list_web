@@ -19,16 +19,30 @@ const CategoryForm = () => {
   const [errors, setErrors] = useState([]);
 
   useEffect(() => {
-    if (isEditMode) {
+    if (isEditMode && id) {
       const fetchCategory = async () => {
         setLoading(true);
         try {
+          console.log("Attempting to fetch category with ID:", id);
           const data = await getCategoryById(id);
-          setCategory(data);
+          console.log("Category data received:", data);
+
+          if (!data) {
+            throw new Error("Category data is empty or undefined");
+          }
+
+          // Format data untuk form
+          const formattedCategory = {
+            name: data.name || "",
+            description: data.description || "",
+          };
+
+          console.log("Formatted category data for form:", formattedCategory);
+          setCategory(formattedCategory);
         } catch (error) {
           console.error("Error fetching category:", error);
           setNotification({
-            message: "Failed to load category",
+            message: `Failed to load category: ${error.message}`,
             type: "error",
           });
         } finally {
@@ -38,7 +52,7 @@ const CategoryForm = () => {
 
       fetchCategory();
     }
-  }, [id, isEditMode]);
+  }, [id, isEditMode, setNotification]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

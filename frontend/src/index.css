@@ -30,3 +30,13 @@ main {
 .notification {
   margin-bottom: 1.5rem;
 }
+
+/* Gaya untuk input date kustom */
+.custom-date-input {
+  cursor: pointer;
+  width: 100%;
+}
+
+.custom-date-input input {
+  cursor: pointer;
+}

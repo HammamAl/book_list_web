@@ -1,4 +1,4 @@
-import api from "./api.js";
+import api from "./api";
 
 export const getBooks = async (filters = {}) => {
   const { categoryId, search, publicationDate } = filters;
@@ -18,8 +18,20 @@ export const getBooks = async (filters = {}) => {
 };
 
 export const getBookById = async (id) => {
-  const response = await api.get(`/books/${id}`);
-  return response.data;
+  try {
+    console.log("Fetching book with ID:", id);
+    const response = await api.get(`/books/${id}`);
+    console.log("Book data from API:", response.data);
+
+    if (!response.data) {
+      throw new Error("No data received from API");
+    }
+
+    return response.data;
+  } catch (error) {
+    console.error("Error in getBookById:", error);
+    throw error;
+  }
 };
 
 export const createBook = async (bookData) => {

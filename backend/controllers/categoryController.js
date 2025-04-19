@@ -63,6 +63,37 @@ export const getCategories = async (req, res) => {
   }
 };
 
+export const getCategoryById = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    // Ambil dokumen kategori
+    const categoryDoc = await categoriesCollection.doc(id).get();
+
+    if (!categoryDoc.exists) {
+      return res.status(404).json({ error: "Kategori tidak ditemukan" });
+    }
+
+    const categoryData = categoryDoc.data();
+
+    // Ambil buku dalam kategori ini
+    const booksSnapshot = await booksCollection.where("categoryId", "==", id).get();
+    const books = booksSnapshot.docs.map((bookDoc) => ({
+      id: bookDoc.id,
+      ...bookDoc.data(),
+    }));
+
+    // Kembalikan kategori dengan buku-bukunya
+    res.json({
+      id: categoryDoc.id,
+      ...categoryData,
+      books,
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
 export const updateCategory = async (req, res) => {
   try {
     const { id } = req.params;
