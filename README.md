@@ -10,9 +10,22 @@ Sebuah aplikasi fullstack yang berfungsi untuk memanage dan mengkategorisasi buk
 
 ## Tech Stack
 
-- Frontend: React.js, Bulma CSS
-- Backend: Node.js/Express
-- Database: Firestore
+- Frontend:
+
+  - React.js (UI Library)
+  - React Router DOM (Client-side routing)
+  - Axios (HTTP Client for API communication)
+  - Bulma (CSS Framework)
+  - Font Awesome (Icons)
+
+- Backend:
+
+  - Node.js (JavaScript Runtime)
+  - Express.js (Node.js web framework)
+  - Firebase Admin SDK (For interacting with Firebase from the server)
+  - CORS (Middleware to allow cross-origin requests)
+
+- Database: Firestore (NoSQL cloud database from Firebase)
 - Hosting App: Cloud Run and Vercel
 
 Website Link : https://book-list-web-flame.vercel.app

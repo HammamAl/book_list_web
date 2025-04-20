@@ -1,5 +1,5 @@
 import React from "react";
-import BookForm from "../components/books/BookForm";
+import BookForm from "../components/books/BookForm.js";
 import { useParams } from "react-router-dom";
 
 const BookFormPage = () => {
