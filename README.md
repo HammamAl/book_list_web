@@ -1,12 +1,18 @@
 # Tugas Take Home Test Internship Azuralabs Book List Web Application 2025
 
-Sebuah aplikasi fullstack yang berfungsi untuk memanage dan mengkategorisasi buku.
+This application is a web-based book list management system with a fullstack architecture. The frontend is built using React, while the backend uses Node.js with the Express framework and Firestore (Firebase) database to store book and category data. This application allows users to manage (create, read, update, delete - CRUD) book and category data.
 
 ## Features
 
-- Book management (add, edit, delete)
-- Category management
-- Filtering and searching books
+- Category Management: CRUD (Create, Read, Update, Delete) for book categories.
+- Book Management: CRUD for books, including category selection.
+- List View: Displays lists of all books and all categories.
+- Book Filtering:
+  - By Category (Dropdown on the book list page).
+  - By Text (Searching in Title, Author, Publisher).
+  - By Publication Date.
+- Validation: Input validation on both frontend and backend (e.g., required fields, ISBN format, category name/ISBN uniqueness).
+- Notifications: Visual feedback for the user after successful or failed operations.
 
 ## Tech Stack
 
