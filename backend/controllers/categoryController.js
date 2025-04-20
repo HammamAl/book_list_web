@@ -1,5 +1,6 @@
 import { categoriesCollection, validateCategory, isNameUnique } from "../models/categoryModel.js";
 import { booksCollection } from "../models/bookModel.js";
+import { db } from "../config/firebase.js";
 
 export const createCategory = async (req, res) => {
   try {
@@ -151,18 +152,23 @@ export const deleteCategory = async (req, res) => {
     const booksSnapshot = await booksCollection.where("categoryId", "==", id).get();
     if (!booksSnapshot.empty) {
       // Hapus semua buku dalam kategori ini
-      const batch = db.batch();
+      const batch = db.batch(); // Sekarang 'db' sudah terdefinisi
       booksSnapshot.docs.forEach((doc) => {
         batch.delete(doc.ref);
       });
       await batch.commit();
+      console.log(`[Backend] Deleted ${booksSnapshot.size} books associated with category ${id}`); // Optional logging
+    } else {
+      console.log(`[Backend] No books found for category ${id}. Proceeding to delete category.`); // Optional logging
     }
 
     // Hapus kategori
     await categoriesCollection.doc(id).delete();
+    console.log(`[Backend] Deleted category ${id}`); // Optional logging
 
-    res.json({ message: "Kategori berhasil dihapus" });
+    res.json({ message: "Kategori dan buku-buku terkait berhasil dihapus" }); // Update pesan sukses
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.error(`[Backend] Error deleting category ${req.params.id}:`, err); // Log error detail
+    res.status(500).json({ error: err.message || "Gagal menghapus kategori" });
   }
 };

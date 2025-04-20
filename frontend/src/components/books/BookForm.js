@@ -308,7 +308,7 @@ const BookForm = () => {
               </button>
             </div>
             <div className="control">
-              <button type="button" className="button is-danger" onClick={() => navigate("/books")}>
+              <button type="button" className="button is-light" onClick={() => navigate("/books")}>
                 Cancel
               </button>
             </div>
